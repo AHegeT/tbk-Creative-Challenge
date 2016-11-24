@@ -1,0 +1,214 @@
+/*
+ * Variables, color classes, generic classes
+ * and mixins declaration
+ */
+.red-text {
+  color: #9f173d; }
+
+.red-background {
+  background-color: #9f173d; }
+
+.white-text {
+  color: #fff; }
+
+.pink-text {
+  color: #febed5; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.italics {
+  font-style: italic;
+  font-weight: 400; }
+
+/*
+ * For an empty main element with just a background
+ */
+.background-main {
+  width: 100%;
+  height: 1090px;
+  font-family: myriad pro;
+  background-image: url("../images/background.png");
+  background-size: cover; }
+  @media (min-width: 320px) {
+    .background-main {
+      height: 800px; } }
+  @media (min-width: 768px) {
+    .background-main {
+      height: 1090px; } }
+
+/*
+ * For the popover modal
+ */
+.modal-dialog {
+  width: 100%;
+  border: .5px solid #fff;
+  padding: 3px;
+  /*
+   * For the decoration rectangles
+   */
+  /*
+   * Assign an transition speed for this modal's animations
+   */ }
+  @media (min-width: 320px) {
+    .modal-dialog {
+      width: 700px;
+      margin: 190px auto;
+      font-size: 18px; } }
+  @media (min-width: 768px) {
+    .modal-dialog {
+      width: 700px;
+      margin: 190px auto;
+      font-size: 19px; } }
+  @media (min-width: 1100px) {
+    .modal-dialog {
+      width: 800px;
+      margin: 150px auto;
+      font-size: 21px; } }
+  .modal-dialog h2 {
+    margin-bottom: 60px;
+    font-size: 70px; }
+  .modal-dialog h3 {
+    font-size: 23px; }
+  .modal-dialog h4 {
+    font-size: 21px; }
+  .modal-dialog .glow-rectangle {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid #eee; }
+  .modal-dialog .glow-rectangle-top {
+    top: -70px;
+    height: 520px; }
+  .modal-dialog .glow-rectangle-bottom {
+    bottom: -40px;
+    height: 80px; }
+  .modal-dialog .animate {
+    -webkit-transition: transform 750ms;
+    transition: transform 750ms; }
+
+.modal-centered {
+  text-align: center; }
+  .modal-centered ul {
+    max-width: 500px;
+    margin: 40px auto;
+    padding-left: 0; }
+    @media (min-width: 1100px) {
+      .modal-centered ul {
+        max-width: 550px; } }
+
+.modal-header {
+  border-bottom: none; }
+  .modal-header .close.red-text {
+    font-size: 40px;
+    font-weight: 500;
+    color: #9f173d;
+    opacity: 1; }
+    @media (min-width: 1100px) {
+      .modal-header .close.red-text {
+        font-size: inherit; } }
+
+.modal-content {
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); }
+  .modal-content .separation-rectangle {
+    width: 25%;
+    height: 3px;
+    margin: 30px auto; }
+
+.modal-footer {
+  border-top: none;
+  text-align: center;
+  /*
+   * For the signup form, input fields
+   * and agreement checkbox
+   */ }
+  .modal-footer #signup-form {
+    margin-top: 30px;
+    margin-bottom: 50px; }
+    .modal-footer #signup-form .cta {
+      font-size: 32px; }
+  .modal-footer input {
+    padding: 5px;
+    color: #000; }
+  .modal-footer #agree-checkbox ~ div {
+    background-color: red; }
+  .modal-footer ::-webkit-input-placeholder {
+    color: #000; }
+  .modal-footer .btn {
+    color: #fff;
+    font-size: 19px; }
+  .modal-footer .signup {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .modal-footer .conditions {
+    font-size: 14px;
+    text-align: left; }
+    @media (min-width: 1100px) {
+      .modal-footer .conditions {
+        font-size: 12px; } }
+
+/*
+ * For the animated elements on the sides
+ */
+.chisel {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 3;
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/chisel.png");
+  transform: translate3d(0, 0, 0); }
+  @media (min-width: 1100px) {
+    .chisel {
+      top: 200%; } }
+
+.shaving {
+  position: absolute;
+  top: 10%;
+  right: -20%;
+  z-index: 3;
+  width: 197px;
+  height: 147px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/shavings.png");
+  transform: translate3d(0, 0, 0); }
+
+/*
+ * Override for the Bootstrap btn
+ */
+.btn-primary {
+  border-radius: 0;
+  border-color: #000;
+  background-color: #000; }
+
+/*
+ * Definition of a custom list-style-type
+ */
+.red-diamonds-ul li {
+  text-align: left;
+  list-style-type: none; }
+.red-diamonds-ul .diamond {
+  background-color: #9f173d; }
+
+.diamond {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  /* Rotate */
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* Rotate Origin */
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%; }
+
+/*# sourceMappingURL=master.css.map */

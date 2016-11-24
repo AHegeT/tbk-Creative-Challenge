@@ -1,0 +1,251 @@
+/*
+ * Variables, color classes, generic classes
+ * and mixins declaration
+ */
+@import "_variables";
+
+@mixin media($queryString) {
+    @media #{$queryString} {
+      @content;
+    }
+}
+
+.red-text {
+    color: $brightRedColor;
+}
+.red-background {
+    background-color: $brightRedColor;
+}
+.white-text {
+    color: $whiteColor;
+}
+.pink-text {
+    color: $pinkColor;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+.italics {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/*
+ * For an empty main element with just a background
+ */
+.background-main {
+    width: 100%;
+    height: $backgroundHeight;
+    font-family: myriad pro;
+    background-image: url($backgroundURL);
+    background-size: cover;
+    @include media($breakpointPhone) {
+        height: 800px;
+    }
+    @include media($breakpointTablet) {
+        height: $backgroundHeight;
+    }
+}
+
+/*
+ * For the popover modal
+ */
+.modal-dialog {
+    width: 100%;
+    border: .5px solid #fff;
+    padding: 3px;
+    @include media($breakpointPhone) {
+        width: 700px;
+        margin: 190px auto;
+        font-size: 18px;
+    }
+    @include media($breakpointTablet) {
+        width: 700px;
+        margin: 190px auto;
+        font-size: 19px;
+    }
+    @include media($breakpointDesktop) {
+        width: 800px;
+        margin: 150px auto;
+        font-size: 21px;
+    }
+    h2 {
+        margin-bottom: 60px;
+        font-size: 70px;
+    }
+    h3 {
+        font-size: 23px;
+    }
+    h4 {
+        font-size: 21px;
+    }
+    
+    /*
+     * For the decoration rectangles
+     */
+    .glow-rectangle {
+        position: absolute;
+        right: 0;
+        left: 0;
+        width: 160px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 7px solid #eee;
+    }
+    .glow-rectangle-top {
+        top: -70px;
+        height: 520px;
+    }
+    .glow-rectangle-bottom {
+        bottom: -40px;
+        height: 80px;
+    }
+    
+    /*
+     * Assign an transition speed for this modal's animations
+     */
+    .animate {
+            -webkit-transition: transform 750ms;
+        transition: transform 750ms;
+    }
+}
+.modal-centered {
+    text-align: center;
+    ul {
+        max-width: 500px;
+        margin: 40px auto;
+        padding-left: 0;
+        @include media($breakpointDesktop) {
+            max-width: 550px;
+        }
+    }
+}
+.modal-header {
+    border-bottom: none;
+    .close.red-text {
+        font-size: 40px;
+        font-weight: 500;
+        color: $brightRedColor;
+        opacity: 1;
+        @include media($breakpointDesktop) {
+            font-size: inherit;
+        }
+    }
+}
+.modal-content {
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(255,255,255,.3);
+    .separation-rectangle {
+        width: 25%;
+        height: 3px;
+        margin: 30px auto;
+    }
+}
+.modal-footer {
+    border-top: none;
+    text-align: center;
+    
+    /*
+     * For the signup form, input fields
+     * and agreement checkbox
+     */
+    #signup-form {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        .cta {
+            font-size: 32px;
+        }
+    }
+    input {
+        padding: 5px;
+        color: $blackColor;
+    }
+    #agree-checkbox ~ div {
+        background-color: red;
+    }
+    ::-webkit-input-placeholder {
+        color: $blackColor;
+    }
+    .btn {
+        color: $whiteColor;
+        font-size: 19px;
+    }
+    .signup {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .conditions {
+        font-size: 14px;
+        text-align: left;
+        @include media($breakpointDesktop) {
+            font-size: 12px;
+        }
+    }
+}
+
+/*
+ * For the animated elements on the sides
+ */
+.chisel {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 3;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url($chiselURL);
+    transform: translate3d(0,0,0);
+    @include media($breakpointDesktop) {
+        top: 200%;
+    }
+}
+.shaving {
+    position: absolute;
+    top: 10%;
+    right: -20%;
+    z-index: 3;
+    width: 197px;
+    height: 147px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url($shavingURL);
+    transform: translate3d(0,0,0);
+}
+
+/*
+ * Override for the Bootstrap btn
+ */
+.btn-primary {
+    border-radius: 0;
+    border-color: $blackColor;
+    background-color: $blackColor;
+}
+
+/*
+ * Definition of a custom list-style-type
+ */
+.red-diamonds-ul {
+    li {
+        text-align: left;
+        list-style-type: none;
+    }
+    .diamond {
+        background-color: $brightRedColor;
+    }
+}
+.diamond {
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px;
+/* Rotate */
+        -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+/* Rotate Origin */
+        -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+}
