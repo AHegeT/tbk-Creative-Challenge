@@ -43,8 +43,10 @@
                             <h3 class="cta">GET YOUR FOOT IN THE DOOR.</h3>
                             <h3>Know the moment our new website goes live.</h3>
                             <div class="row signup">
-                                <input name="name" type="text" placeholder="Name">
-                                <input name="email" type="email" placeholder="Email">
+                                <label class="hidden" for="name">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Name">
+                                <label class="hidden" for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="Email">
                                 <input class="btn btn-primary" type="submit" value="SUBMIT">
                             </div>
                             <div class="row">
@@ -70,7 +72,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Import Bootstrap js -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
-    <script src="js/main.js"></script>
+    <!-- Import the javascript for this page -->
+    <script src="js/main.min.js"></script>
 </body>
 </html>
