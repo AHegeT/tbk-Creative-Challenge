@@ -1,7 +1,39 @@
 /*
- * Variables, color classes, generic classes
- * and mixins declaration
+ * Variables and mixins declaration
  */
+/*
+ * Include fonts
+ */
+@font-face {
+  font-family: "freight-display-book";
+  src: url("../fonts/FDBook/freight-display-book.eot");
+  src: url("../fonts/FDBook/freight-display-book.eot?#iefix") format("embedded-opentype"), url("../fonts/FDBook/freight-display-book.woff") format("woff"), url("../fonts/FDBook/freight-display-book.ttf") format("truetype"), url("../fonts/FDBook/freight-display-book.svg#freight-display-book") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: "freight-display-semibold";
+  src: url("../fonts/FDSemiBold/freight-display-semibold.eot");
+  src: url("../fonts/FDSemiBold/freight-display-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/FDSemiBold/freight-display-semibold.woff") format("woff"), url("../fonts/FDSemiBold/freight-display-semibold.ttf") format("truetype"), url("../fonts/FDSemiBold/freight-display-semibold.svg#freight-display-semibold") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: "futura";
+  src: url("../fonts/Futura/futura.eot");
+  src: url("../fonts/Futura/futura.eot?#iefix") format("embedded-opentype"), url("../fonts/Futura/futura.woff") format("woff"), url("../fonts/Futura/futura.ttf") format("truetype"), url("../fonts/Futura/futura.svg#futura") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+/*
+ * Declare font, color and generic classes
+ */
+.fdbook-font {
+  font-family: 'freight-display-book'; }
+
+.fdsemibold-font {
+  font-family: 'freight-display-semibold'; }
+
+.futura-font {
+  font-family: 'futura'; }
+
 .red-text {
   color: #9f173d; }
 
@@ -19,7 +51,8 @@
 
 .italics {
   font-style: italic;
-  font-weight: 400; }
+  font-weight: 400;
+  font-family: 'freight-display-semibold'; }
 
 /*
  * For an empty main element with just a background
@@ -44,11 +77,9 @@
   width: 100%;
   border: .5px solid #fff;
   padding: 3px;
+  font-family: 'futura';
   /*
    * For the decoration rectangles
-   */
-  /*
-   * Assign an transition speed for this modal's animations
    */ }
   @media (min-width: 320px) {
     .modal-dialog {
@@ -67,11 +98,14 @@
       font-size: 21px; } }
   .modal-dialog h2 {
     margin-bottom: 60px;
-    font-size: 70px; }
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'freight-display-book'; }
   .modal-dialog h3 {
     font-size: 23px; }
   .modal-dialog h4 {
-    font-size: 21px; }
+    font-size: 21px;
+    letter-spacing: 2px; }
   .modal-dialog .glow-rectangle {
     position: absolute;
     right: 0;
@@ -86,9 +120,6 @@
   .modal-dialog .glow-rectangle-bottom {
     bottom: -40px;
     height: 80px; }
-  .modal-dialog .animate {
-    -webkit-transition: transform 750ms;
-    transition: transform 750ms; }
 
 .modal-centered {
   text-align: center; }
@@ -99,6 +130,42 @@
     @media (min-width: 1100px) {
       .modal-centered ul {
         max-width: 550px; } }
+
+#subscribeModal {
+  /*
+   * Assign a transition speed for this modal's animations
+   * as well as common properties for the display
+   */
+  /*
+  * For the animated elements on the sides
+  */ }
+  #subscribeModal .animate {
+    position: absolute;
+    z-index: 3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 750ms;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-transition: transform 750ms;
+    -webkit-transition-duration: 750ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden; }
+  #subscribeModal .chisel {
+    left: 0;
+    top: 100%;
+    width: 300px;
+    height: 300px;
+    background-image: url("../images/chisel.png"); }
+    @media (min-width: 1100px) {
+      #subscribeModal .chisel {
+        top: 200%; } }
+  #subscribeModal .shaving {
+    top: 10%;
+    right: -20%;
+    width: 197px;
+    height: 147px;
+    background-image: url("../images/shavings.png"); }
 
 .modal-header {
   border-bottom: none; }
@@ -130,7 +197,8 @@
     margin-top: 30px;
     margin-bottom: 50px; }
     .modal-footer #signup-form .cta {
-      font-size: 32px; }
+      font-size: 32px;
+      font-family: 'freight-display-book'; }
   .modal-footer input {
     padding: 5px;
     color: #000; }
@@ -145,41 +213,12 @@
     margin-top: 20px;
     margin-bottom: 20px; }
   .modal-footer .conditions {
+    text-align: left;
     font-size: 14px;
-    text-align: left; }
+    font-weight: 400; }
     @media (min-width: 1100px) {
       .modal-footer .conditions {
         font-size: 12px; } }
-
-/*
- * For the animated elements on the sides
- */
-.chisel {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: 3;
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../images/chisel.png");
-  transform: translate3d(0, 0, 0); }
-  @media (min-width: 1100px) {
-    .chisel {
-      top: 200%; } }
-
-.shaving {
-  position: absolute;
-  top: 10%;
-  right: -20%;
-  z-index: 3;
-  width: 197px;
-  height: 147px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("../images/shavings.png");
-  transform: translate3d(0, 0, 0); }
 
 /*
  * Override for the Bootstrap btn
@@ -187,7 +226,8 @@
 .btn-primary {
   border-radius: 0;
   border-color: #000;
-  background-color: #000; }
+  background-color: #000;
+  font-family: 'freight-display-book'; }
 
 /*
  * Definition of a custom list-style-type

@@ -1,13 +1,33 @@
 /*
- * Variables, color classes, generic classes
- * and mixins declaration
+ * Variables and mixins declaration
  */
-@import "_variables";
+@import '_variables';
+@import 'fontface';
 
 @mixin media($queryString) {
     @media #{$queryString} {
       @content;
     }
+}
+
+/*
+ * Include fonts
+ */
+@include fontFace('freight-display-book','../fonts/FDBook/freight-display-book');
+@include fontFace('freight-display-semibold','../fonts/FDSemiBold/freight-display-semibold');
+@include fontFace('futura','../fonts/Futura/futura');
+
+/*
+ * Declare font, color and generic classes
+ */
+.fdbook-font {
+    font-family: 'freight-display-book';
+}
+.fdsemibold-font {
+    font-family: 'freight-display-semibold';
+}
+.futura-font {
+    font-family: 'futura';
 }
 
 .red-text {
@@ -29,6 +49,7 @@
 .italics {
     font-style: italic;
     font-weight: 400;
+    font-family: 'freight-display-semibold';
 }
 
 /*
@@ -55,6 +76,7 @@
     width: 100%;
     border: .5px solid #fff;
     padding: 3px;
+    font-family: 'futura';
     @include media($breakpointPhone) {
         width: 700px;
         margin: 190px auto;
@@ -73,12 +95,15 @@
     h2 {
         margin-bottom: 60px;
         font-size: 70px;
+        font-weight: 600;
+        font-family: 'freight-display-book';
     }
     h3 {
         font-size: 23px;
     }
     h4 {
         font-size: 21px;
+        letter-spacing: 2px;
     }
     
     /*
@@ -101,14 +126,6 @@
         bottom: -40px;
         height: 80px;
     }
-    
-    /*
-     * Assign an transition speed for this modal's animations
-     */
-    .animate {
-            -webkit-transition: transform 750ms;
-        transition: transform 750ms;
-    }
 }
 .modal-centered {
     text-align: center;
@@ -121,6 +138,49 @@
         }
     }
 }
+#subscribeModal {
+    /*
+     * Assign a transition speed for this modal's animations
+     * as well as common properties for the display
+     */
+    .animate {
+        position: absolute;
+        z-index: 3;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: transform 750ms;
+        transform: translate3d(0,0,0);
+        backface-visibility: hidden;
+    
+        -webkit-transition: transform 750ms;
+        -webkit-transition-duration: 750ms;
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-backface-visibility: hidden;
+    }
+    
+    /*
+    * For the animated elements on the sides
+    */
+    .chisel {
+        
+        left: 0;
+        top: 100%;
+        width: 300px;
+        height: 300px;
+        background-image: url($chiselURL);
+        @include media($breakpointDesktop) {
+            top: 200%;
+        }
+    }
+    .shaving {
+        top: 10%;
+        right: -20%;
+        width: 197px;
+        height: 147px;
+        background-image: url($shavingURL);
+    }
+}
+
 .modal-header {
     border-bottom: none;
     .close.red-text {
@@ -155,6 +215,7 @@
         margin-bottom: 50px;
         .cta {
             font-size: 32px;
+            font-family: 'freight-display-book';
         }
     }
     input {
@@ -176,43 +237,13 @@
         margin-bottom: 20px;
     }
     .conditions {
-        font-size: 14px;
         text-align: left;
+        font-size: 14px;
+        font-weight: 400;
         @include media($breakpointDesktop) {
             font-size: 12px;
         }
     }
-}
-
-/*
- * For the animated elements on the sides
- */
-.chisel {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    z-index: 3;
-    width: 300px;
-    height: 300px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url($chiselURL);
-    transform: translate3d(0,0,0);
-    @include media($breakpointDesktop) {
-        top: 200%;
-    }
-}
-.shaving {
-    position: absolute;
-    top: 10%;
-    right: -20%;
-    z-index: 3;
-    width: 197px;
-    height: 147px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url($shavingURL);
-    transform: translate3d(0,0,0);
 }
 
 /*
@@ -222,6 +253,7 @@
     border-radius: 0;
     border-color: $blackColor;
     background-color: $blackColor;
+    font-family: 'freight-display-book';
 }
 
 /*
