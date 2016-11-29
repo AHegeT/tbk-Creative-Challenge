@@ -1,0 +1,254 @@
+/*
+ * Variables and mixins declaration
+ */
+/*
+ * Include fonts
+ */
+@font-face {
+  font-family: "freight-display-book";
+  src: url("../fonts/FDBook/freight-display-book.eot");
+  src: url("../fonts/FDBook/freight-display-book.eot?#iefix") format("embedded-opentype"), url("../fonts/FDBook/freight-display-book.woff") format("woff"), url("../fonts/FDBook/freight-display-book.ttf") format("truetype"), url("../fonts/FDBook/freight-display-book.svg#freight-display-book") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: "freight-display-semibold";
+  src: url("../fonts/FDSemiBold/freight-display-semibold.eot");
+  src: url("../fonts/FDSemiBold/freight-display-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/FDSemiBold/freight-display-semibold.woff") format("woff"), url("../fonts/FDSemiBold/freight-display-semibold.ttf") format("truetype"), url("../fonts/FDSemiBold/freight-display-semibold.svg#freight-display-semibold") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+@font-face {
+  font-family: "futura";
+  src: url("../fonts/Futura/futura.eot");
+  src: url("../fonts/Futura/futura.eot?#iefix") format("embedded-opentype"), url("../fonts/Futura/futura.woff") format("woff"), url("../fonts/Futura/futura.ttf") format("truetype"), url("../fonts/Futura/futura.svg#futura") format("svg");
+  font-style: normal;
+  font-weight: normal; }
+/*
+ * Declare font, color and generic classes
+ */
+.fdbook-font {
+  font-family: 'freight-display-book'; }
+
+.fdsemibold-font {
+  font-family: 'freight-display-semibold'; }
+
+.futura-font {
+  font-family: 'futura'; }
+
+.red-text {
+  color: #9f173d; }
+
+.red-background {
+  background-color: #9f173d; }
+
+.white-text {
+  color: #fff; }
+
+.pink-text {
+  color: #febed5; }
+
+.uppercase {
+  text-transform: uppercase; }
+
+.italics {
+  font-style: italic;
+  font-weight: 400;
+  font-family: 'freight-display-semibold'; }
+
+/*
+ * For an empty main element with just a background
+ */
+.background-main {
+  width: 100%;
+  height: 1090px;
+  font-family: myriad pro;
+  background-image: url("../images/background.png");
+  background-size: cover; }
+  @media (min-width: 320px) {
+    .background-main {
+      height: 800px; } }
+  @media (min-width: 768px) {
+    .background-main {
+      height: 1090px; } }
+
+/*
+ * For the popover modal
+ */
+.modal-dialog {
+  width: 100%;
+  border: .5px solid #fff;
+  padding: 3px;
+  font-family: 'futura';
+  /*
+   * For the decoration rectangles
+   */ }
+  @media (min-width: 320px) {
+    .modal-dialog {
+      width: 700px;
+      margin: 190px auto;
+      font-size: 18px; } }
+  @media (min-width: 768px) {
+    .modal-dialog {
+      width: 700px;
+      margin: 190px auto;
+      font-size: 19px; } }
+  @media (min-width: 1100px) {
+    .modal-dialog {
+      width: 800px;
+      margin: 150px auto;
+      font-size: 21px; } }
+  .modal-dialog h2 {
+    margin-bottom: 60px;
+    font-size: 70px;
+    font-weight: 600;
+    font-family: 'freight-display-book'; }
+  .modal-dialog h3 {
+    font-size: 23px; }
+  .modal-dialog h4 {
+    font-size: 21px;
+    letter-spacing: 2px; }
+  .modal-dialog .glow-rectangle {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 7px solid #eee; }
+  .modal-dialog .glow-rectangle-top {
+    top: -70px;
+    height: 520px; }
+  .modal-dialog .glow-rectangle-bottom {
+    bottom: -40px;
+    height: 80px; }
+
+.modal-centered {
+  text-align: center; }
+  .modal-centered ul {
+    max-width: 500px;
+    margin: 40px auto;
+    padding-left: 0; }
+    @media (min-width: 1100px) {
+      .modal-centered ul {
+        max-width: 550px; } }
+
+#subscribeModal {
+  /*
+   * Assign a transition speed for this modal's animations
+   * as well as common properties for the display
+   */
+  /*
+  * For the animated elements on the sides
+  */ }
+  #subscribeModal .animate {
+    position: absolute;
+    z-index: 3;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 750ms;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-transition: transform 750ms;
+    -webkit-transition-duration: 750ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden; }
+  #subscribeModal .chisel {
+    left: 0;
+    top: 100%;
+    width: 300px;
+    height: 300px;
+    background-image: url("../images/chisel.png"); }
+    @media (min-width: 1100px) {
+      #subscribeModal .chisel {
+        top: 200%; } }
+  #subscribeModal .shaving {
+    top: 10%;
+    right: -20%;
+    width: 197px;
+    height: 147px;
+    background-image: url("../images/shavings.png"); }
+
+.modal-header {
+  border-bottom: none; }
+  .modal-header .close.red-text {
+    font-size: 40px;
+    font-weight: 500;
+    color: #9f173d;
+    opacity: 1; }
+    @media (min-width: 1100px) {
+      .modal-header .close.red-text {
+        font-size: inherit; } }
+
+.modal-content {
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); }
+  .modal-content .separation-rectangle {
+    width: 25%;
+    height: 3px;
+    margin: 30px auto; }
+
+.modal-footer {
+  border-top: none;
+  text-align: center;
+  /*
+   * For the signup form, input fields
+   * and agreement checkbox
+   */ }
+  .modal-footer #signup-form {
+    margin-top: 30px;
+    margin-bottom: 50px; }
+    .modal-footer #signup-form .cta {
+      font-size: 32px;
+      font-family: 'freight-display-book'; }
+  .modal-footer input {
+    padding: 5px;
+    color: #000; }
+  .modal-footer #agree-checkbox ~ div {
+    background-color: red; }
+  .modal-footer ::-webkit-input-placeholder {
+    color: #000; }
+  .modal-footer .btn {
+    color: #fff;
+    font-size: 19px; }
+  .modal-footer .signup {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .modal-footer .conditions {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400; }
+    @media (min-width: 1100px) {
+      .modal-footer .conditions {
+        font-size: 12px; } }
+
+/*
+ * Override for the Bootstrap btn
+ */
+.btn-primary {
+  border-radius: 0;
+  border-color: #000;
+  background-color: #000;
+  font-family: 'freight-display-book'; }
+
+/*
+ * Definition of a custom list-style-type
+ */
+.red-diamonds-ul li {
+  text-align: left;
+  list-style-type: none; }
+.red-diamonds-ul .diamond {
+  background-color: #9f173d; }
+
+.diamond {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 15px;
+  /* Rotate */
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* Rotate Origin */
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%; }
+
+/*# sourceMappingURL=master.css.map */
